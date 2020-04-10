@@ -4,7 +4,7 @@ import { Socket as PhoenixSocket } from 'phoenix';
 import Cookies from 'js-cookie';
 
 const socket_url = process.env.REACT_APP_URL ?
-  `ws://${process.env.REACT_APP_URL}/socket` :
+  `wss://${process.env.REACT_APP_URL}/socket` :
   'ws://localhost:4000/socket';
 
 export default createAbsintheSocketLink(
