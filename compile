@@ -2,7 +2,6 @@ cd $assets_dir
 
 echo $(ls)
 
-rm .env
 touch .env
 echo "REACT_APP_URL=${URL}" >> .env
 
