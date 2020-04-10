@@ -7,10 +7,9 @@ config :backend, Backend.Repo,
 
 config :backend, BackendWeb.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: System.get_env("URL"), port: 443],
-  force_ssl: [rewrite_on: [:x_forwarded_proto]]
+  url: [scheme: "https", host: System.get_env("URL"), port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 # Do not print debug messages in production
-config :logger, level: :info
-
-import_config "prod.secret.exs"
+config :logger, level: :debug
