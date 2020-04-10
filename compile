@@ -7,5 +7,3 @@ mkdir ../priv/static
 yarn build
 
 cd $phoenix_dir
-
-mix phx.server
