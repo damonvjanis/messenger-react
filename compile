@@ -1,13 +1,15 @@
-cd $phoenix_dir
+cd $assets_dir
 
-cd /react_app
+echo $(ls)
 
 rm .env
 touch .env
 echo "REACT_APP_URL=${URL}" >> .env
 
+echo $(cat .env)
+
 yarn build
 
-cd ../
+cd $phoenix_dir
 
 mix phx.server
