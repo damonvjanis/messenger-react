@@ -1,0 +1,13 @@
+cd $phoenix_dir
+
+cd /react_app
+
+rm .env
+touch .env
+echo "REACT_APP_URL=${URL}" >> .env
+
+yarn build
+
+cd ../
+
+mix phx.server
