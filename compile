@@ -1,12 +1,9 @@
 cd $assets_dir
 
-echo $(ls)
-
 touch .env
 echo "REACT_APP_URL=${URL}" >> .env
 
-echo $(cat .env)
-
+mkdir ../priv/static
 yarn build
 
 cd $phoenix_dir
