@@ -10,13 +10,8 @@ defmodule BackendWeb.Resolvers.ConversationResolver do
   alias Absinthe.Subscription
 
   @from_number "+16673083511"
-  @status_url "https://41158434.ngrok.io/telnyx/status"
-
-  @telnyx_api_key Application.get_env(
-                    :backend,
-                    :telnyx_api_key,
-                    "KEY01704583AFA56956EA7BE45A69EAA48A_XdnLy7MR5nC2yXNfyM4jsN"
-                  )
+  @status_url Application.get_env(:backend, :status_url)
+  @telnyx_api_key Application.get_env(:backend, :telnyx_api_key)
 
   require Logger
 

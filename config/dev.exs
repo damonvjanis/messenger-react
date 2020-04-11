@@ -25,3 +25,7 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+# Set Telynx variables
+config :backend, :status_url, "https://41158434.ngrok.io/telnyx/status"
+config :backend, :telnyx_api_key, "KEY01704583AFA56956EA7BE45A69EAA48A_XdnLy7MR5nC2yXNfyM4jsN"
