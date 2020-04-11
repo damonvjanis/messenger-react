@@ -79,6 +79,12 @@ defmodule BackendWeb.Schema do
 
       resolve(&ConversationResolver.create_message/3)
     end
+
+    field :conversation_read, type: :conversation do
+      arg(:id, non_null(:id))
+
+      resolve(&ConversationResolver.conversation_read/3)
+    end
   end
 
   subscription do

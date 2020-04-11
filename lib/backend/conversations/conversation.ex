@@ -9,6 +9,7 @@ defmodule Backend.Conversations.Conversation do
   schema "conversations" do
     field :name, :string
     field :number, :string
+    field :unread_at, :naive_datetime_usec
     field :most_recent_message, :map, virtual: true
 
     timestamps()
@@ -18,7 +19,7 @@ defmodule Backend.Conversations.Conversation do
 
   def changeset(conversation, attrs) do
     conversation
-    |> cast(attrs, [:name, :number])
+    |> cast(attrs, [:name, :number, :unread_at])
     |> validate_required([:number])
     |> format_number()
     |> unique_constraint(:number)

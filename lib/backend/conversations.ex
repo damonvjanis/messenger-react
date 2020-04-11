@@ -52,7 +52,7 @@ defmodule Backend.Conversations do
 
   def upsert_conversation(attrs = %{}, opts \\ []) do
     changeset = Keyword.get(opts, :changeset, &Conversation.changeset/2)
-    on_conflict = Keyword.get(opts, :on_conflict, {:replace, [:number]})
+    on_conflict = Keyword.get(opts, :on_conflict, {:replace, [:unread_at]})
     conflict_target = Keyword.get(opts, :on_conflict, :number)
 
     %Conversation{}

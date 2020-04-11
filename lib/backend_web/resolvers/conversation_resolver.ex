@@ -9,7 +9,7 @@ defmodule BackendWeb.Resolvers.ConversationResolver do
   alias BackendWeb.Endpoint
   alias Absinthe.Subscription
 
-  @from_number "+16673083511"
+  @from_number Application.get_env(:backend, :telnyx_phone_number)
   @status_url Application.get_env(:backend, :status_url)
   @telnyx_api_key Application.get_env(:backend, :telnyx_api_key)
 
@@ -128,11 +128,26 @@ defmodule BackendWeb.Resolvers.ConversationResolver do
     {:error, "unauthorized"}
   end
 
+  def conversation_read(_, %{id: id}, %{context: %{authenticated?: true}}) do
+    conversation = Conversations.get_conversation_by_id(id)
+
+    with convo when not is_nil(convo) <- conversation,
+         {:ok, convo} <- Conversations.update_conversation(convo, %{unread_at: nil}) do
+      {:ok, convo}
+    else
+      _ -> {:error, "Error updating unread_at"}
+    end
+  end
+
+  def conversation_read(_, _, _) do
+    {:error, "unauthorized"}
+  end
+
   def create_conversation_and_message(_, args, %{context: %{authenticated?: true}}) do
     number = Map.get(args, :number)
     body = Map.get(args, :body)
-    url = Map.get(args, :attachment_url) |> IO.inspect()
-    url_type = Map.get(args, :url_type) |> IO.inspect()
+    url = Map.get(args, :attachment_url)
+    url_type = Map.get(args, :url_type)
     direction = "outbound"
     status = "sending"
 

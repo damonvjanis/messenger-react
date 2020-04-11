@@ -3,7 +3,7 @@ defmodule BackendWeb.Resolvers.LoginResolver do
   require Logger
 
   def login(%{code: code}, _) do
-    if code == System.get_env("LOGIN_CODE") do
+    if code == Application.get_env(:backend, :login_code) do
       {:ok, %{token: Authentication.create_token()}}
     else
       {:ok, %{}}

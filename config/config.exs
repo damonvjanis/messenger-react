@@ -22,6 +22,24 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Set Mailgun variables
+config :backend, :mailgun_domain, System.get_env("MAILGUN_DOMAIN")
+config :backend, :mailgun_api_key, System.get_env("MAILGUN_API_KEY")
+
+# Set Telynx variables
+config :backend, :telnyx_number, System.get_env("TELNYX_NUMBER")
+config :backend, :status_url, "https://#{System.get_env("URL")}/telnyx/status"
+config :backend, :telnyx_api_key, System.get_env("TELNYX_API_KEY") || ""
+
+# Set base app url
+config :backend, :url, System.get_env("URL")
+
+# Set email for notifications
+config :backend, :notification_email, System.get_env("NOTIFICATION_EMAIL")
+
+# Set login code
+config :backend, :login_code, System.get_env("LOGIN_CODE")
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

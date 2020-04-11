@@ -74,6 +74,14 @@ const UPDATE_CONVERSATION_NAME = gql`
   }
 `;
 
+const CONVERSATION_READ = gql`
+  mutation conversationRead($id: ID!) {
+    conversationRead(id: $id) {
+      id
+    }
+  }
+`;
+
 const CREATE_CONVERSATION_AND_MESSAGE = gql`
   mutation createConversationAndMessage(
     $number: String!
@@ -180,11 +188,14 @@ const CONVERSATION_UPDATED_SUBSCRIPTION = gql`
   }
 `;
 
-const Conversation = ({ conversation, setCurrentConversation }) => {
+const Conversation = ({ conversation, setCurrentConversation, clickAction }) => {
   return (
     <div
       className='conversation'
-      onClick={() => setCurrentConversation(conversation)}
+      onClick={() => {
+        setCurrentConversation(conversation)
+        clickAction(conversation.id)
+      }}
     >
       <div className='name'>{conversation.name || conversation.number}</div>
       <div className='last-message'>
@@ -197,6 +208,8 @@ const Conversation = ({ conversation, setCurrentConversation }) => {
 };
 
 const ConversationList = ({ conversations, setCurrentConversation, onLoadMore }) => {
+  const [conversationRead] = useMutation(CONVERSATION_READ);
+
   const scrollCheck = e => {
     const list = document.getElementById('conversation-list');
 
@@ -204,6 +217,10 @@ const ConversationList = ({ conversations, setCurrentConversation, onLoadMore })
       onLoadMore();
     }
   };
+
+  const clickAction = id => {
+    conversationRead({ variables: { id: id } });
+  }
 
   return (
     <div
@@ -225,6 +242,7 @@ const ConversationList = ({ conversations, setCurrentConversation, onLoadMore })
           conversation={conversation}
           setCurrentConversation={setCurrentConversation}
           key={conversation.number}
+          clickAction={clickAction}
         ></Conversation>
       ))}
     </div>

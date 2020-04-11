@@ -15,7 +15,12 @@ defmodule BackendWeb.MessageController do
   end
 
   defp do_inbound(%{"from" => from, "id" => id, "media" => media, "text" => text}) do
-    with {:ok, conversation} <- Conversations.upsert_conversation(%{number: from["phone_number"]}) do
+    data = %{
+      number: from["phone_number"],
+      unread_at: NaiveDateTime.utc_now()
+    }
+
+    with {:ok, conversation} <- Conversations.upsert_conversation(data) do
       for %{"content_type" => content_type, "url" => url} <- media do
         Conversations.create_message(
           %{

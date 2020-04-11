@@ -26,6 +26,15 @@ config :phoenix, :stacktrace_depth, 20
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
 
+# Set base app url
+config :backend, :url, "localhost:4000"
+
 # Set Telynx variables
-config :backend, :status_url, "https://41158434.ngrok.io/telnyx/status"
-config :backend, :telnyx_api_key, "KEY01704583AFA56956EA7BE45A69EAA48A_XdnLy7MR5nC2yXNfyM4jsN"
+config :backend, :telnyx_number, "+16673083511"
+config :backend, :status_url, "https://35c9c125.ngrok.io/telnyx/status"
+
+# Set email for notifications
+config :backend, :notification_email, "damonvjanis@gmail.com"
+
+# Set login code
+config :backend, :login_code, "messenger"

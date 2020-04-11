@@ -43,7 +43,8 @@ defmodule Backend.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:absinthe_phoenix, "~> 1.4"},
       {:ex_phone_number, "~> 0.2"},
-      {:telnyx, "~> 0.2"}
+      {:telnyx, "~> 0.2"},
+      {:cors_plug, "~> 2.0"}
     ]
   end
 

@@ -8,13 +8,11 @@ defmodule Backend.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      # Start the Ecto repository
       Backend.Repo,
-      # Start the endpoint when the application starts
       BackendWeb.Endpoint,
-      {Absinthe.Subscription, [BackendWeb.Endpoint]}
-      # Starts a worker by calling: Backend.Worker.start_link(arg)
-      # {Backend.Worker, arg},
+      {Absinthe.Subscription, [BackendWeb.Endpoint]},
+      Backend.Chron.StayAlive,
+      Backend.Chron.MissedMessages
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
