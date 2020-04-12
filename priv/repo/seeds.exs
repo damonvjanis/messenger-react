@@ -20,7 +20,7 @@ random_words = ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", 
 
 send_statuses = ["sending", "sent", "failed", "delivered"]
 
-Enum.each(1..10_000, fn increment ->
+Enum.each(1..10, fn increment ->
   number = "+1" <> to_string(base_number + increment)
 
   conversation = Repo.insert!(%Conversation{number: number})
