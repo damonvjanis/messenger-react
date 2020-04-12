@@ -9,7 +9,7 @@ defmodule BackendWeb.Resolvers.ConversationResolver do
   alias BackendWeb.Endpoint
   alias Absinthe.Subscription
 
-  @from_number Application.get_env(:backend, :telnyx_phone_number)
+  @from_number Application.get_env(:backend, :telnyx_number)
   @status_url Application.get_env(:backend, :status_url)
   @telnyx_api_key Application.get_env(:backend, :telnyx_api_key)
 
