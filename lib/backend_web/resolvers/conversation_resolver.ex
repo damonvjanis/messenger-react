@@ -296,6 +296,8 @@ defmodule BackendWeb.Resolvers.ConversationResolver do
           end
         end)
 
+      Conversations.update_conversation(conversation, %{unread_at: nil})
+
       {:ok, for({:ok, m} <- [text_result, attachment_result], m != :error, do: m)}
     end
   end
