@@ -13,6 +13,7 @@
   ],
   "env": {
     "HEROKU_APP_NAME": {
+      "description": "This needs to match exactly the 'app-name' entered above (don't leave 'app-name' blank), or things won't work properly.",
       "required": true
     }
   },
