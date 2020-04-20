@@ -1,0 +1,11 @@
+{
+  "name": "Messenger React",
+  "description": "An SMS messenger app using Phoenix / React / Apollo through Telnyx",
+  "repository": "https://github.com/damonvjanis/messenger-react",
+  "keywords": ["elixir", "phoenix", "react", "apollo", "graphql", "absinthe", "telnyx"],
+  "env": {
+    "HEROKU_APP_NAME": {
+      "required": true
+    }
+  }
+}
