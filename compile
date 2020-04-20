@@ -1,7 +1,7 @@
 cd $assets_dir
 
 touch .env
-echo "REACT_APP_URL=${URL}" >> .env
+echo "REACT_APP_URL=${APP_NAME}.herokuapp.com" >> .env
 
 mkdir ../priv/static
 yarn build

@@ -12,8 +12,27 @@
     "telnyx"
   ],
   "env": {
-    "HEROKU_APP_NAME": {
-      "description": "This needs to match exactly the 'app-name' entered above (don't leave 'app-name' blank), or things won't work properly.",
+    "APP_NAME": {
+      "description": "This needs to match exactly with the 'App name' entered above (don't leave 'App name' blank), or things won't work properly.",
+      "required": true
+    },
+    "TELNYX_API_KEY": {
+      "description": "Create an account at https://telnyx.com, click 'Auth' in the left navigation menu, click 'Create API Key', confirm, click the 'Copy' button and then paste the value here.",
+      "required": true
+    },
+    "TELNYX_NUMBER": {
+      "description": "While logged in at https://telnyx.com, click 'Numbers' in the left navigation menu, enter your city in the search field, and hit 'Search'. Click 'Add to Cart' next to one of the numbers in the search results, then check out and complete the order. Click on 'numbers' on the left side again, and on the right side of your number click on the gear icon. Click the 'Routing' tab and click 'Select Messaging Profile' -> 'Create new Messaging Profile'. Enter any name like (example: 'Messenger') and click 'Create Profile'. Then click on the 'Inbound' tab and in the 'Webhook URL' field enter 'https://<APP_NAME>.herokuapp.com/telnyx/inbound' (replacing APP_NAME with the value you entered in 'App name'). Save changes, and then select the messaging profile you just created from the dropdown and save changes and accept. You're done with the Telnyx setup!! 🎉😅"
+    },
+    "LOGIN_CODE": {
+      "description": "Password to log in. Anyone you give it to can send text messages from your number, so make sure it's a good, secure password.",
+      "required": true
+    },
+    "NOTIFICATION_EMAIL": {
+      "description": "This email address will get a notification whenever a new message comes in and hasn't been read. This can be a team email address if multiple people need to know about new messages.",
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "generator": "secret",
       "required": true
     }
   },

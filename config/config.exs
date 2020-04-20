@@ -28,11 +28,11 @@ config :backend, :mailgun_api_key, System.get_env("MAILGUN_API_KEY")
 
 # Set Telynx variables
 config :backend, :telnyx_number, System.get_env("TELNYX_NUMBER")
-config :backend, :status_url, "https://#{System.get_env("URL")}/telnyx/status"
+config :backend, :status_url, "https://#{System.get_env("APP_NAME")}.herokuapp.com/telnyx/status"
 config :backend, :telnyx_api_key, System.get_env("TELNYX_API_KEY") || ""
 
 # Set base app url
-config :backend, :url, System.get_env("URL")
+config :backend, :url, "#{System.get_env("APP_NAME")}.herokuapp.com"
 
 # Set email for notifications
 config :backend, :notification_email, System.get_env("NOTIFICATION_EMAIL")
