@@ -37,7 +37,11 @@
       "required": true
     }
   },
-  "addons": ["heroku-postgresql"],
+  "addons": [
+    "heroku-postgresql",
+    "mailgun:starter",
+    "cloudinary:starter"
+  ],
   "buildpacks": [
     {
       "url": "https://buildpack-registry.s3.amazonaws.com/buildpacks/hashnuke/elixir.tgz"
@@ -45,5 +49,8 @@
     {
       "url": "https://github.com/gjaldon/heroku-buildpack-phoenix-static"
     }
-  ]
+  ],
+  "scripts": {
+    "postdeploy": "mix ecto.migrate"
+  }
 }
