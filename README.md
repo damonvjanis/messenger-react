@@ -110,6 +110,8 @@ At this point, you should have the following things:
 * An app name picked out, like `my-example-biz-messenger`
 
 You're done with the Telnyx setup and ready to launch!! 🎉🚀
+
+Note: When you click the button below, if you don't have a Heroku account yet, you'll need to create one, and verify the account by adding a credit card. Everything about this app and the Heroku setup is free, and they won't charge your card without you explicitly upgrading something, but the deployment will fail if you don't have a verified account.
 ***
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
