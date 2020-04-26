@@ -113,3 +113,34 @@ You're done with the Telnyx setup and ready to launch!! 🎉🚀
 ***
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+***
+## Post-Launch instructions for email notifications:
+
+If someone sends a text message to your Telnyx phone number, responding to a message you sent, you will get an email notification after 10 minutes if you haven't read it by then.
+
+When you create the app, following the instructions in the README, you will be promted to enter an email address that will receive unread notifications.
+
+This email address could be a personal email address, or it could also be a shared email address so that multiple people will see the email and be able to respond to the unread message.
+
+## Action item:
+
+After you've launched the app, you'll need to whitelist the email address you submitted for notifications. To do that, follow these instructions:
+
+Log into your Heroku account at https://heroku.com.
+
+Go to the dashboard for your messenger app.
+
+Click on the word 'Mailgun'
+
+![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/mailgun.png)
+
+You'll be taken to your Mailgun account. On the left, expand the 'Sending' tab and click 'Overview'
+
+![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/overview.png)
+
+On the right, enter your notification email address in the field and click 'Save Recipient'
+
+![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/authorized_recipients.png)
+
+Email notifications should work now!
