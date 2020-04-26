@@ -41,9 +41,40 @@ Click the 'Copy' button and then paste / save it somewhere you'll remember. You'
 
 ![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/copy.png)
 
-### Step 2: Create a phone number
+### Step 2: Set up a messaging profile
 
-While logged in at https://telnyx.com, click 'Numbers' in the left navigation menu.
+Click 'Messaging' in the left navigation menu.
+
+![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/messaging.png)
+
+Click the 'Create your first profile' button.
+
+![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/create_your_first_profile.png)
+
+Give the profile a name (like 'Messenger') and make sure it's set to 'API v2'
+
+![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/profile_name.png)
+***
+
+### Important Note
+You need to pick a name for your app that will be part of the website address where you log in. In the next step and after you hit the button at the bottom of the page, you will need to enter the name the same way in a few places.
+
+Your website address will look like '<APP_NAME>.herokuapp.com', and it has to be unique on heroku, so do something like 'my-example-biz-messenger' that's not likely to be taken yet.
+
+If Heroku tells you the name has been taken already, make sure to come back to this step and update your Messaging Profile with the new name 🙏
+***
+
+Scroll down to the 'Inbound Settings' section and in the 'URL' field enter: 'https://<APP_NAME>.herokuapp.com/telnyx/inbound' (replacing APP_NAME with your app's name) like this:
+
+![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/webhook_url.png)
+
+Click 'Save' at the bottom of the page.
+
+![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/save.png)
+
+### Step 3: Create a phone number
+
+Click 'Numbers' in the left navigation menu.
 
 ![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/numbers.png)
 
@@ -59,36 +90,15 @@ Check out and complete the order.
 
 ![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/cart.png)
 
-Click on 'numbers' on the left side again, and on the right side of your number click on the gear icon.
+Click on 'numbers' on the left side again.
 
-![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/gear.png)
+![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/numbers.png)
 
-Click the 'Routing' tab and click 'Select Messaging Profile' -> 'Create new Messaging Profile'.
-
-![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/create_new_messaging_profile.png)
-
-Enter any name (example: 'Messenger') and click 'Create Profile'.
-
-![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/create_profile.png)
-
-***
-### Important Note
-You need to pick a name for your app that will be part of the website address where you log in. In the next step and after you hit the button at the bottom of the page, you will need to enter the name the same way in a few places.
-
-Your website address will look like "<APP_NAME>.herokuapp.com", and it has to be unique on heroku, so do something like "my-example-biz-messenger" that's not likely to be taken yet.
-
-If Heroku tells you the name has been taken already, make sure to come back to this step and update your Messaging Profile with the new name 🙏
-***
-
-Click on the 'Inbound' tab and in the 'Webhook URL' field enter 'https://<APP_NAME>.herokuapp.com/telnyx/inbound' (replacing APP_NAME with your app's name).
-
-![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/webhook_url.png)
-
-Save changes, and then select the messaging profile you just created from the dropdown and save changes and accept.
+For the number you just purchased, click the dropdown 'Select Messaging Profile' and select the profile you created in Step 2.
 
 ![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/select_messaging_profile.png)
 
-Make a note of the phone number you bought. You'll need to enter it in the format "+18885552222" (No Dashes!) after you click the button.
+Make a note of the phone number you bought. You'll need to enter it in the format "+18885552222" (No Dashes!) after you click the button. If you click the little icon next to the number, it will copy the number for you in the correct format 👍
 
 ![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/number.png)
 
