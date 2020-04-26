@@ -1,7 +1,5 @@
 ## Messenger React
 
-***
-
 This is a fully-baked but lightly-featured two-way text messaging app.
 
 It allows anyone with the login code (password) to send and receive texts and attachments through a single Telnyx phone number, and view updates in real time as other logged-in users send and receive messages.
@@ -20,8 +18,6 @@ The app is expected to work, but (as per the license) does not come with any war
 * The software/deployment/hosting is free, but your phone number through Telnynx is roughly $1 per month and text messages are a fraction of a cent each. It doesn't add up very fast 👏
 * The free Heroku database has a limit of 10,000 rows, and each new conversation and each text message is a row, so you can do a lot of messaging before it runs out. The paid database is about $10/month if you run out of space.
 * There might be bugs - if so let me know in the issue tracker on here 🙏
-
-***
 
 ## Instructions
 
@@ -79,7 +75,7 @@ Enter any name (example: 'Messenger') and click 'Create Profile'.
 ### Important Note
 You need to pick a name for your app that will be part of the website address where you log in. In the next step and after you hit the button at the bottom of the page, you will need to enter the name the same way in a few places.
 
-Your website address will look like "<APP_NAME>.herokuapp.com", and it has to be unique on heroku, so do something like "sunrise-flower-messenger" that's not likely to be taken yet.
+Your website address will look like "<APP_NAME>.herokuapp.com", and it has to be unique on heroku, so do something like "my-example-biz-messenger" that's not likely to be taken yet.
 
 If Heroku tells you the name has been taken already, make sure to come back to this step and update your Messaging Profile with the new name 🙏
 ***
@@ -96,8 +92,14 @@ Make a note of the phone number you bought. You'll need to enter it in the forma
 
 ![](https://github.com/damonvjanis/messenger-react/raw/images-for-readme/number.png)
 
-You're done with the Telnyx setup and ready to launch!! 🎉😅🚀
+***
+At this point, you should have the following things:
 
+* A Telnyx API key that looks like this: `KEY0171B35698E39333BB93681456E5C0BA_4xPVwJGnqlfdyiyCOz1iRf`
+* A purchased Telnyx phone number, formatted like this: `+13853830503`
+* An app name picked out, like `my-example-biz-messenger`
+
+You're done with the Telnyx setup and ready to launch!! 🎉🚀
 ***
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
