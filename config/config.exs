@@ -22,6 +22,9 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Set Cloudinary variables
+config :backend, :cloudinary_url, System.get_env("CLOUDINARY_URL")
+
 # Set Mailgun variables
 config :backend, :mailgun_domain, System.get_env("MAILGUN_DOMAIN")
 config :backend, :mailgun_api_key, System.get_env("MAILGUN_API_KEY")

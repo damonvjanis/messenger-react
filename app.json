@@ -51,6 +51,6 @@
     }
   ],
   "scripts": {
-    "postdeploy": "mix ecto.migrate"
+    "postdeploy": "mix do ecto.migrate, cloudinary"
   }
 }

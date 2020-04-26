@@ -106,7 +106,7 @@ defmodule BackendWeb.Resolvers.ConversationResolver do
   end
 
   def get_cloudinary_url(_, %{context: %{authenticated?: true}}) do
-    cloudinary_key = System.get_env("CLOUDINARY_URL")
+    cloudinary_key = Application.get_env(:backend, :cloudinary_url)
 
     api_key = cloudinary_key && cloudinary_key |> String.split("@") |> List.last()
 
